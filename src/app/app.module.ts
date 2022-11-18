@@ -1,3 +1,6 @@
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -21,12 +24,15 @@ import {
   ],
   imports: [
     BrowserModule,
+    MatCardModule,
+    MatButtonModule,
     StoreModule.forRoot(
       { cartEntries: cartReducer },
       { metaReducers: [metaReducerLocalStorage] }
     ),
     AppRoutingModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })

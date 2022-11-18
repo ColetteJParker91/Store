@@ -1,3 +1,8 @@
+$backgroundColor: #f6f6f6;
+$cardColor: #fff;
+$textColor: black;
+$boxShadowColor: #dee1e4;
+
 .products {
   margin: 10px;
   display: flex;
@@ -5,53 +10,58 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 50px 0;
+  background-color: $backgroundColor;
 }
 
-.product {
-  margin: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.product-details {
+.mat-card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 5px 5px 5px $boxShadowColor;
+  background-color: $cardColor;
+  max-width: 300px;
+  width: 300px;
+  margin: 15px;
+  padding: 20px 3px;
 }
 
-.image {
-  margin: 10px;
-  width: 10px;
+.mat-card-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  color: $textColor;
 }
 
-.title {
-  font-weight: bolder;
-}
-
-.price {
-  text-align: right;
-}
-
-.space {
-  flex-grow: 2;
-}
-
-.condition,
-.name,
-.price {
-  margin-bottom: 5px;
-}
-
-.add-cart-button {
-  border: 0;
-  background-color: pink;
-  float: right;
-  margin-left: 5px;
+.mat-card-title {
+  display: flex;
+  max-width: 240px;
+  justify-content: center;
+  line-height: normal;
+  padding-top: 10px;
 }
 
 .img {
-  width: 10px;
-  height: 10px;
-  -o-object-fit: contain;
+  width: 10%;
+  height: 10%;
   object-fit: contain;
+}
+
+.mat-card-subtitle {
+  display: flex;
+  max-width: 210px;
+  justify-content: left;
+  padding-left: 20px;
+  line-height: normal;
+}
+
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  text-decoration: none;
+  background-color: #f2d388;
+  color: $textColor;
 }

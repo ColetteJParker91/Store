@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Product } from './../entity/product';
 import { addProduct } from './../cart-state-store/cart.actions';
 
+
 export const PRODUCTS = [
   {
     id: 1,

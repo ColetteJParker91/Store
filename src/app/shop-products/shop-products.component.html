@@ -1,19 +1,19 @@
-<div class="products">
-  <div *ngFor="let product of products()" class="product">
-    <div class="image">
-      <img src="{{ product.image }}" />
-    </div>
+<div class="products" style="display: flex">
+  <mat-card *ngFor="let product of products()" class="product">
     <div class="product-details">
-      <div class="title">{{ product.name }}</div>
-      <div class="condition">{{ product.condition }}</div>
-      <div class="space"></div>
-      <div class="price">
-        $ {{ product.price | number: "1.2-2" }}
-        <button class="add-cart-button" (click)="buyProduct(product)">
-          Add to Cart
-        </button>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-subtitle class="condition"
+        >Condition: {{ product.condition }}</mat-card-subtitle
+      >
+      <div class="image">
+        <img class="card-img" src="{{ product.image }}" />
       </div>
+      <mat-card-subtitle class="price"
+        >{{ product.price | number: "1.2-2" }} €
+      </mat-card-subtitle>
+      <mat-card-actions>
+        <a href="https://www.rebuy.de/" class="button"> Purchase Now </a>
+      </mat-card-actions>
     </div>
-  </div>
+  </mat-card>
 </div>
-
