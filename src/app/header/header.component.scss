@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+  font-family: "Poppins";
+  font-weight: 400;
+}
+
+.header-container {
+  height: 70px;
+  background: #59c1bd;
+  display: flex;
+  flex-direction: row;
+}
+
+.space {
+  flex-grow: 2;
+}
+
+.route {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: larger;
+  font-weight: 900;
+}
+
+.route-link {
+  color: black;
+  text-decoration: none;
+}
+
+.route-link:hover {
+  color: brown;
+}
+
+.cart-icon {
+  margin-top: 10px;
+  margin-right: 3px;
+}
+
+.counter {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: larger;
+  font-weight: 900;
+}
+
+.total-price {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: larger;
+  font-weight: 900;
+  margin-right: 20px;
+}
+
+.img {
+  width: 3px;
+  height: 3px;
+}
