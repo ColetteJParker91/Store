@@ -1,19 +1,32 @@
-<div class="products" style="display: flex">
-  <mat-card *ngFor="let product of products()" class="product">
-    <div class="product-details">
-      <mat-card-title>{{ product.name }}</mat-card-title>
-      <mat-card-subtitle class="condition"
-        >Condition: {{ product.condition }}</mat-card-subtitle
-      >
-      <div class="image">
-        <img class="card-img" src="{{ product.image }}" />
+<body>
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+
+  <div class="products" style="display: flex">
+    <mat-card *ngFor="let product of products()" class="product">
+      <div class="product-details">
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-subtitle class="condition"
+          >Condition: {{ product.condition }}</mat-card-subtitle
+        >
+        <div class="image">
+          <img class="card-img" src="{{ product.image }}" />
+        </div>
+        <mat-card-subtitle class="price"
+          >{{ product.price | number: "1.2-2" }} €
+        </mat-card-subtitle>
+        <mat-card-subtitle class="voting">
+          Votes
+          <mat-icon>keyboard_arrow_up</mat-icon>
+          <div>{{ product.votes }}</div>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </mat-card-subtitle>
+        <mat-card-actions>
+          <a href="https://www.rebuy.de/" class="button"> Purchase Now </a>
+        </mat-card-actions>
       </div>
-      <mat-card-subtitle class="price"
-        >{{ product.price | number: "1.2-2" }} €
-      </mat-card-subtitle>
-      <mat-card-actions>
-        <a href="https://www.rebuy.de/" class="button"> Purchase Now </a>
-      </mat-card-actions>
-    </div>
-  </mat-card>
-</div>
+    </mat-card>
+  </div>
+</body>

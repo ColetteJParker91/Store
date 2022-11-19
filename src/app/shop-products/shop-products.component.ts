@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Action, Store } from '@ngrx/store';
 import { Product } from './../entity/product';
 import { addProduct } from './../cart-state-store/cart.actions';
+import { Post } from '../models';
+import * as Actions from '../actions';
+import { Observable } from 'rxjs';
 
+interface AppState {
+  post: Post;
+}
 
 export const PRODUCTS = [
   {
@@ -11,6 +17,7 @@ export const PRODUCTS = [
     condition: 'Good',
     price: 389.99,
     image: 'assets/iphone11.jpeg',
+    votes: '+32',
   },
   {
     id: 2,
@@ -18,6 +25,7 @@ export const PRODUCTS = [
     condition: 'Very Good',
     price: 264.99,
     image: 'assets/sonyplaystation.jpeg',
+    votes: '+26',
   },
   {
     id: 3,
@@ -25,6 +33,7 @@ export const PRODUCTS = [
     condition: 'Like New',
     price: 121.99,
     image: 'assets/samsunga3.jpeg',
+    votes: '+22',
   },
   {
     id: 4,
@@ -32,6 +41,7 @@ export const PRODUCTS = [
     condition: 'Very Good',
     price: 522.99,
     image: 'assets/ipadair.jpeg',
+    votes: '+18',
   },
   {
     id: 5,
@@ -39,6 +49,7 @@ export const PRODUCTS = [
     condition: 'Heavily Used',
     price: 338.99,
     image: 'assets/sony6000.jpeg',
+    votes: '+12',
   },
 ];
 
@@ -58,5 +69,25 @@ export class ShopProductsComponent implements OnInit {
 
   public buyProduct(product: Product) {
     this.store.dispatch(addProduct(product));
+  }
+}
+export class AppComponent {
+  title = 'voting-system';
+
+  post: Observable<Post>;
+
+  constructor(private store: Store<AppState>) {
+    this.post = this.store.select('post)' as any);
+  }
+  resetPost() {
+    this.store.dispatch(new Actions.Reset());
+  }
+
+  upvote() {
+    this.store.dispatch(new Actions.Upvote());
+  }
+
+  downvote() {
+    this.store.dispatch(new Actions.Downvote());
   }
 }

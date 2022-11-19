@@ -4,4 +4,5 @@ export interface Product {
   condition: string;
   price: number;
   image: string;
+  votes: string;
 }
