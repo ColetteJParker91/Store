@@ -6,8 +6,7 @@ $boxShadowColor: #dee1e4;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 body {
-  font-family: 'poppins', sans-serif;
-
+  font-family: "poppins", sans-serif;
 }
 
 .products {
@@ -29,6 +28,7 @@ body {
   box-shadow: 5px 5px 5px $boxShadowColor;
   background-color: $cardColor;
   max-width: 300px;
+  max-height: 500px;
   width: 300px;
   margin: 15px;
   padding: 20px 3px;
@@ -79,4 +79,8 @@ a.button {
 .voting {
   display: flex;
   justify-content: right;
+}
+
+.price {
+  font-weight: 700;
 }
